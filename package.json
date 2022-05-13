@@ -49,6 +49,6 @@
       "api"
     ],
     "ext": "ts,json",
-    "exec": "npx ts-node api/app.ts"
+    "exec": "npx ts-node --files api/app.ts"
   }
 }
