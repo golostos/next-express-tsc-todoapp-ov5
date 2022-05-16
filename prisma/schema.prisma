@@ -27,7 +27,7 @@ model User {
   name         String?
   passwordHash String
   email        String    @unique
-  // role          Role        @default(USER)
+  role         Role      @default(USER)
   // status        Status      @default(ACTIVE)
   // sessions      Session[]
   tasks        Task[]
@@ -48,4 +48,9 @@ model Session {
   updatedAt    DateTime @updatedAt
 
   @@map("sessions")
+}
+
+enum Role {
+  ADMIN
+  USER
 }

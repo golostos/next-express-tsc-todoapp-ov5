@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { checkSession } from '../../services/auth-service';
+import { checkAdmin, checkSession } from '../../services/auth-service';
 import { CreateNewUser, Login, UpdateUser } from "./users.controller";
 
 const usersRouter = Router()
@@ -11,5 +11,7 @@ usersRouter.post('/users', CreateNewUser)
 usersRouter.post('/users/login', Login)
 
 usersRouter.patch('/users/:id', checkSession, UpdateUser)
+
+usersRouter.delete('/users/:id', checkSession, checkAdmin, UpdateUser)
 
 export default usersRouter

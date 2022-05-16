@@ -28,3 +28,4 @@ export const UpdateUser = userMiddleware<{ id: string }, UpdateUserDTO>(async (r
     const updatedUser = await UpdateUserService(req.user, id, userDto)
     res.send(updatedUser)
 })
+
